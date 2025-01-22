@@ -5,6 +5,9 @@ on:
     branches:
       - master  # ou 'main' selon votre branche par défaut
 
+permissions:
+  contents: write  # Donne les permissions d'écriture sur le contenu du dépôt
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
