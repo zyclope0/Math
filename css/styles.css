@@ -1,0 +1,394 @@
+/* Styles généraux */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9FAFB;
+    color: #333;
+}
+
+header {
+    background-color: #0078D7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab-button:hover {
+    background-color: #005A9E;
+    transform: scale(1.05);
+}
+
+.tab-button.active {
+    background-color: #4CAF50;
+}
+
+.tab {
+    display: none;
+    padding: 20px;
+}
+
+.active-tab {
+    display: block;
+}
+
+/* Progression */
+.progression-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#4CAF50 0%, #ddd 0%);
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: progressAnimation 1s ease-out;
+}
+
+@keyframes progressAnimation {
+    from {
+        background: conic-gradient(#ddd 0%, #ddd 100%);
+    }
+    to {
+        background: conic-gradient(#4CAF50 50%, #ddd 0%);
+    }
+}
+
+.inside-circle {
+    background: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.progression-section > * {
+    margin-bottom: 20px;
+}
+
+.progression-section table {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f1f1f1;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Exercises */
+.categories-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.categories-menu .btn {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.categories-menu .btn:hover {
+    background-color: #005A9E;
+}
+
+.categories-menu .btn.active {
+    background-color: #4CAF50;
+}
+
+.exercise {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.exercise:hover {
+    transform: translateY(-5px);
+}
+
+.exercise img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Pagination */
+#pagination-controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#pagination-controls button {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#pagination-controls button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Suggestions */
+#suggestions ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#suggestions ul li {
+    margin: 10px;
+}
+
+#suggestions ul li a {
+    color: #0078D7;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+#suggestions ul li a:hover {
+    color: #005A9E;
+    text-decoration: underline;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox:target {
+    display: flex;
+}
+.exercise img {
+    max-width: 100%; /* L'image occupera au maximum la largeur de son conteneur */
+    max-height: 200px; /* Hauteur maximale pour éviter que l'image prenne trop de place */
+    height: auto; /* Conserve les proportions */
+    display: block; /* Centre l'image dans son conteneur */
+    margin: 10px auto; /* Ajoute un espacement vertical et centre horizontalement */
+    cursor: pointer; /* Ajoute un curseur pour montrer que l'image est cliquable */
+    border-radius: 5px; /* Ajoute un léger arrondi aux coins */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute un léger ombrage pour un effet visuel agréable */
+}
+.categories-menu button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e3e3e3;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.categories-menu button:hover {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.categories-menu button.active {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.exercise {
+    background: white;
+    border: 2px solid transparent; /* Catégorie colorée ici */
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.exercise:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.exercise h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.exercise p {
+    margin: 10px 0;
+}
+
+.exercise img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.exercise img:hover {
+    transform: scale(1.05);
+}
+
+.exercise .btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.exercise .btn:hover {
+    background-color: #45a049;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3e8e41;
+    color: white;
+    transform: scale(1.05);
+}
+.loading {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    margin: 20px;
+    color: #666;
+}
+.progression-reset {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.progression-reset .btn {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.progression-reset .btn:hover {
+    background-color: #005A9E;
+    transform: scale(1.05);
+}
+
+.completed {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.checkmark-animation {
+    font-size: 2em;
+    color: green;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}

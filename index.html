@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Mathématique pour Anakyn</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Espace Mathématique pour Anakyn</h1>
+        <p>Amuse-toi et progresse en mathématiques !</p>
+    </header>
+
+    <!-- Navigation par onglets -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'progression')"><i class="fas fa-chart-line"></i> Progression</button>
+        <button class="tab-button" onclick="openTab(event, 'exercises')"><i class="fas fa-tasks"></i> Exercices</button>
+        <button class="tab-button" onclick="openTab(event, 'suggestions')"><i class="fas fa-lightbulb"></i> Suggestions</button>
+    </div>
+
+    <!-- Onglet Progression -->
+    <div id="progression" class="tab active-tab progression-section">
+        <h2>Progression</h2>
+        <div class="progress-circle">
+            <div class="inside-circle" id="circle-percentage">0%</div>
+        </div>
+        <table>
+            <tr>
+                <th>Exercices terminés</th>
+                <td id="completed-exercises">0</td>
+            </tr>
+            <tr>
+                <th>Score global</th>
+                <td id="score">0 / 100</td>
+            </tr>
+        </table>
+        <div class="progression-reset">
+            <button class="btn" onclick="resetProgress()">Réinitialiser la progression</button>
+        </div>
+        <div id="badges">
+            <h3>Badges obtenus :</h3>
+            <span>Aucun badge pour l'instant.</span>
+        </div>
+    </div>
+
+    <!-- Onglet Exercices -->
+        <div id="exercises" class="tab">
+        <h2>Exercices</h2>
+        <div id="loading-indicator" class="loading">Chargement...</div>
+        <div id="categories-menu" class="categories-menu"></div>
+        <div id="exercises-container"></div>
+        <div id="pagination-controls">
+            <button class="btn" onclick="previousPage()" id="prev-btn" disabled>Précédent</button>
+            <span id="page-indicator">Page 1</span>
+            <button class="btn" onclick="nextPage()" id="next-btn">Suivant</button>
+        </div>
+    </div>
+
+    <!-- Onglet Suggestions -->
+    <div id="suggestions" class="tab">
+        <h2>Suggestions d'applications</h2>
+        <ul>
+            <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></li>
+            <li><a href="https://www.mathplayground.com" target="_blank">Math Playground</a></li>
+            <li><a href="https://www.prodigygame.com" target="_blank">Prodigy Math</a></li>
+        </ul>
+    </div>
+
+    <!-- Lightbox pour les images -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Aperçu de l'image">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
