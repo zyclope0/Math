@@ -199,7 +199,13 @@ function grantBadge(badgeName) {
 
 function displayBadges() {
     const badgeContainer = document.querySelector("#badges");
-    badgeContainer.innerHTML = "";
+    
+    // Conservez le texte "Badges obtenus :"
+    const title = badgeContainer.querySelector('h3');
+    badgeContainer.innerHTML = ''; // Efface uniquement les badges existants
+    badgeContainer.appendChild(title); // Réajoute le titre
+
+    // Ajoutez les nouveaux badges
     badges.forEach(badge => {
         const badgeElement = document.createElement("span");
         badgeElement.className = "badge";
