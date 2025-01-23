@@ -251,16 +251,18 @@ th {
 .lightbox:target {
     display: flex;
 }
+
 .exercise img {
-    max-width: 100%; /* L'image occupera au maximum la largeur de son conteneur */
-    max-height: 200px; /* Hauteur maximale pour éviter que l'image prenne trop de place */
-    height: auto; /* Conserve les proportions */
-    display: block; /* Centre l'image dans son conteneur */
-    margin: 10px auto; /* Ajoute un espacement vertical et centre horizontalement */
-    cursor: pointer; /* Ajoute un curseur pour montrer que l'image est cliquable */
-    border-radius: 5px; /* Ajoute un léger arrondi aux coins */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute un léger ombrage pour un effet visuel agréable */
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .categories-menu button {
     padding: 10px 20px;
     margin: 5px;
@@ -284,9 +286,10 @@ th {
     color: white;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .exercise {
     background: white;
-    border: 2px solid transparent; /* Catégorie colorée ici */
+    border: 2px solid transparent;
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
@@ -346,6 +349,7 @@ th {
     color: white;
     transform: scale(1.05);
 }
+
 .loading {
     display: none;
     text-align: center;
@@ -353,6 +357,7 @@ th {
     margin: 20px;
     color: #666;
 }
+
 .progression-reset {
     text-align: center;
     margin-top: 20px;
