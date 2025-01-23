@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Redirect</title>
+</head>
+<body>
+    <h1>OAuth Redirect</h1>
+    <p>Redirection en cours...</p>
+    <script>
+        // Extraire le code d'autorisation de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get('code');
+
+        if (authCode) {
+            // Envoyer le code d'autorisation à votre serveur pour échanger contre un jeton d'accès
+            fetch('/exchange-token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: authCode })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Jeton d\'accès reçu :', data.access_token);
+                // Stocker le jeton d'accès dans le stockage local ou dans un cookie
+                localStorage.setItem('airtable_access_token', data.access_token);
+                // Rediriger vers la page principale
+                window.location.href = '/';
+            })
+            .catch(error => {
+                console.error('Erreur lors de l\'échange du jeton :', error);
+            });
+        } else {
+            console.error('Code d\'autorisation non trouvé dans l\'URL');
+        }
+    </script>
+</body>
+</html>

@@ -5,7 +5,6 @@ let allExercises = [];
 let currentCategory = 'all';
 let currentPage = 1;
 const itemsPerPage = 5;
-let exercisesLoaded = false;
 let totalExercises = 0; // Nombre total d'exercices disponibles
 
 // URLs pour l'API Google Sheets
@@ -99,15 +98,6 @@ function filterByCategory(category, button) {
     const buttons = document.querySelectorAll("#categories-menu .btn");
     buttons.forEach(btn => btn.classList.remove("active"));
     if (button) button.classList.add("active");
-}
-
-// Filtrer les exercices par catégorie
-function filterByCategory(category) {
-    currentCategory = category;
-    const filteredExercises = currentCategory === 'all'
-        ? allExercises
-        : allExercises.filter(ex => ex.category === currentCategory);
-    renderExercises(filteredExercises);
 }
 
 // Afficher les exercices avec pagination
@@ -284,7 +274,6 @@ function updateDashboard() {
     updateProgressCircle(score);
 }
 
-
 // Charger la progression sauvegardée
 async function loadProgress() {
     try {
@@ -362,7 +351,6 @@ async function saveProgress() {
         alert("Une erreur est survenue lors de la sauvegarde des données dans Google Sheet.");
     }
 }
-
 
 async function resetProgress() {
     if (confirm("Êtes-vous sûr de vouloir réinitialiser votre progression ?")) {
